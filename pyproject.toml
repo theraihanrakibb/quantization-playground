@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quant-playground"
+version = "0.1.0"
+description = "Educational quantization playground: FP8/FP4/INT8/INT4 formats with round-trip error, size, and accuracy-impact demos."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "MD RAKIBUL ISLAM RAIHAN", email = "theraihanrakibb@users.noreply.github.com" }]
+keywords = ["quantization", "fp8", "fp4", "int8", "int4", "ai-infra", "inference", "numpy"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = ["numpy>=1.26,<2"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.8"]
+
+[project.scripts]
+quant-playground = "quant_playground.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["quant_playground*"]
